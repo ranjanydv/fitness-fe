@@ -15,13 +15,13 @@ function SignIn() {
   const [password, setPassword] = useState('');
 
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const data = {
       email: email,
       password: password
     };
-    axios.post(`${constant.BASE_API}/auth/login`, data)
+    await axios.post(`${constant.BASE_API}/auth/login`, data)
       .then((res) => {
         console.log(res);
         toast.success('Login successful');

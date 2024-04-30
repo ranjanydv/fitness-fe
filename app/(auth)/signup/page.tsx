@@ -16,14 +16,14 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
 
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const data = {
       name: name,
       email: email,
       password: password
     };
-    axios.post(`${constant.BASE_API}/auth/register`, data)
+    await axios.post(`${constant.BASE_API}/auth/register`, data)
       .then((res) => {
         console.log(res);
         toast.success('Account Created', { description: 'Login to continue' });
@@ -31,9 +31,9 @@ const SignUp = () => {
           router.replace('/signin');
         }, 1200);
       }).catch((e) => {
-      console.log(e);
-      toast.error(e.response.data.message);
-    });
+        console.log(e);
+        toast.error(e.response.data.message);
+      });
   };
 
 
