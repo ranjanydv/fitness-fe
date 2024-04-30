@@ -8,7 +8,7 @@ const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'Company', href: 'company' },
     { name: 'About', href: 'about' },
-    { name: 'Dashboard', href: 'dashboard' },
+    { name: 'Dashboard', href: 'dashboard/workouts' },
 ]
 
 export function Navbar() {

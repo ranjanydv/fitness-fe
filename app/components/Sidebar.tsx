@@ -46,8 +46,9 @@ const Sidebar = () => {
                 className="cursor-pointer text-sm bg-yellow-100 hover:bg-yellow-200 hover:text-yellow-800 hover:gap-3 p-4 rounded transition-all ease-in-out duration-200 flex items-center gap-2"
                 onClick={() => {
                     toast.success("Logout successful")
+                    localStorage.removeItem("token")
                     setTimeout(() => {
-                        router.replace("/")
+                        router.replace("/signin")
                     }, 500)
                 }}
             >
